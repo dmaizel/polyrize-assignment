@@ -9,8 +9,9 @@ from utils import normalize_json
 users = []
 
 with open("user.json") as f:
-    user = json.load(f)
-    users.append(User(*user.values()))
+    users_array = json.load(f)
+    for user in users_array:
+        users.append(User(*user.values()))
 
 username_table = {u.username: u for u in users}
 userid_table = {u.user_id: u for u in users}
@@ -32,7 +33,7 @@ async def authenticate(request, *args, **kwargs):
 
     return user
 
-app = Sanic("Polyrize Assignment")
+app = Sanic("Normalization API")
 initialize(app, authenticate=authenticate)
 
 

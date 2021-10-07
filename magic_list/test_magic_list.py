@@ -1,8 +1,7 @@
 from dataclasses import dataclass
+from magic_list import MagicList
 
 import pytest
-
-from magic_list import MagicList
 
 
 @dataclass

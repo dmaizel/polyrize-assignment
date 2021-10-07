@@ -1,5 +1,6 @@
 from collections import UserList
 
+
 class MagicList(UserList):
     def __init__(self, cls_type=None):
         super().__init__()
